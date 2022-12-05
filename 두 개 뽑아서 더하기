@@ -47,6 +47,9 @@ TreeSet
 LinkedHashSet
 LinkedHashSet도 중복된 데이터를 저장할 수 없다. 차이점은 입력된 순서대로 데이터를 관리한다.  
 
+## Integer 자료형의 '==' 연산은 반드시 (int)형으로 캐스팅 해줘야 정확한 결과를 얻을 수 있다.
+## 캐스팅하거나 Object.equals 메소드를 사용하는 것이 가장 정확하다.
+
 class Solution {
     public int[] solution(int[] numbers) {
     	

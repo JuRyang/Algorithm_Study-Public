@@ -1,4 +1,4 @@
-package JuRyang.programmers;
+package JuRyang.programmers.level;
 
 import java.util.*;
 
@@ -39,8 +39,8 @@ public class EX_잘라서배열로저장 {
 
         EX_잘라서배열로저장 aa = new EX_잘라서배열로저장();
         EX_잘라서배열로저장 aa2 = new EX_잘라서배열로저장();
-        aa.solution("abc1Addfggg4556b",6);
-       // aa2.solution("abcdef123",3);
+       // aa.solution("abc1Addfggg4556b",6);
+        aa2.solution("abcdef123",3);
 
 
     }

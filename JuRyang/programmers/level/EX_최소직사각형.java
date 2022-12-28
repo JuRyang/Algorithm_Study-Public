@@ -1,4 +1,4 @@
-package JuRyang.programmers;
+package JuRyang.programmers.level;
 
 import java.util.Scanner;
 

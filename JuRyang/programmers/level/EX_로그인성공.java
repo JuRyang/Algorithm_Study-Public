@@ -1,9 +1,6 @@
-package JuRyang.programmers;
+package JuRyang.programmers.level;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 
 public class EX_로그인성공 {
     /**

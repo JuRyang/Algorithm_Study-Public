@@ -1,4 +1,4 @@
-package JuRyang.programmers;
+package JuRyang.programmers.level;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

@@ -51,7 +51,7 @@ public class 성격유형검사하기 {
 //        }
         
         Iterator<Map.Entry<Character, Integer>> iter = map.entrySet().iterator();
-        
+         
         while(iter.hasNext()) {
         	Entry<Character, Integer> entry = iter.next();
         	char f = entry.getKey();

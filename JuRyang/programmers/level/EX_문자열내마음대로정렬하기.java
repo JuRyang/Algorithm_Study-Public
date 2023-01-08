@@ -2,6 +2,8 @@ package JuRyang.programmers.level;
 
 import java.util.*;
 
+import static JuRyang.programmers.level.EX_문자열내마음대로정렬하기.solution;
+
 public class EX_문자열내마음대로정렬하기 {
     /**
      * 2023. 01. 01
@@ -17,79 +19,50 @@ public class EX_문자열내마음대로정렬하기 {
      * @return
      */
 
-    public static List<String> solution(String[] strings, int n) {
+    public static String[] solution(String[] strings, int n) {
 
-       // String [] answer={};
-        List<String> answer = new ArrayList<>();
-        Map<Integer, String> list = new HashMap<>();
+        //String [] answer={};
+        //List<String> answer = new ArrayList<>();
+        HashMap<Integer, String> list = new HashMap<Integer,String>();
         List<String> lists = new ArrayList<>();
+
         for(int i =0; i < strings.length; i++){
             String[] result = strings[i].split("");
 
             //문자를 숫자로 바꾸자
             int a = result[n].charAt(0);
-            char b  = result[n].charAt(0);
-            //System.out.println(a+":");
-            //System.out.println(b+":");
 
             lists.add(result[n]);
-
-
- //           System.out.println(lists.toString()+"0_0");
+            //list.put(i,result[n]);
             list.put(a,strings[i]);
             Collections.sort(lists);
-//            System.out.println(list.entrySet()+">_<");
          //  list.put(String.valueOf(lists), strings[i]);
 
+        }
+
+        List<String> keyInfo = new ArrayList<String>();
+        for(Map.Entry<Integer, String> entry : list.entrySet()){
+            keyInfo.add(entry.getValue());
+        }
+
+        System.out.println(keyInfo);
+        String[] answer = new String[keyInfo.size()];
+
+        try {
+
+            for(int t=0; t<keyInfo.size(); t++) {
+                System.out.println("keyInfo.get(t)");
+                answer[t] = keyInfo.get(t);
+            }
+        }
+        catch(IndexOutOfBoundsException e) {
+
+            System.out.println(e);
 
         }
 
-        System.out.println(lists.toString()+"0_0");
-        System.out.println(lists.get(0));
-        System.out.println(list.entrySet()+">_<");
-
-        // 맵은 중복 허용 안되자나 ㅠㅠㅠ 짜증나 ㅠㅠㅠㅠㅠㅠ
-
-
-        List<Integer> keySet = new ArrayList<>(list.keySet());
-        Collections.sort(keySet);
-
-        for (Integer key : keySet) {
-            System.out.print("Key : " + key);
-            System.out.println(", Val : " + list.get(key));
-            answer.add(list.get(key));
-        }
-        System.out.println(answer.toString());
-
-
-
-
-
-
-
-//
-//        for (Map.Entry<Integer, String> entrySet : list.entrySet()) {
-//           // System.out.println(entrySet.getKey() + " : " + entrySet.getValue());
-//
-////            Iterator<Map.Entry<Integer, String>> list2 = list.entrySet().iterator();
-////            while (list2.hasNext()){
-////                Map.Entry<Integer,String> entry = (Map.Entry<Integer,String> )list2.next();
-////                int key = entry.getKey();
-////                String value = entry.getValue();
-////                Collections.sort(((o1, o2) -> list.get(o1.getKey()).compareTo(list.get(o2.getKey()))));
-////
-////            }
-//
-////            List<Map.Entry<Integer, String>> entryList = new LinkedList<>(list.entrySet());
-////            entryList.sort(((o1, o2) -> list.get(o1.getKey()).compareTo(list.get(o2.getKey()))));
-////            for(Map.Entry<Integer, String> entry : entryList){
-////                System.out.println("key : " + entry.getKey() + ", value : " + entry.getValue());
-////            }
-//       }
-
-
-
-
+       // Arrays.sort(answer);
+        System.out.println(Arrays.toString(answer)+"<>");
         return answer;
     }
 

@@ -25,21 +25,30 @@ public class EX_소수찾기 {
             1부터 5 사이의 소수는 [2,3,5] 3개가 존재하므로 3를 반환
      */
 
-        public static int solution(int n) {
-            int answer = 0;
-            int [] arr = new int [n];
-            for(int i = 0; i < 10; i++){
-                for(int j = 2; j <= n; j++){
 
+    public static int solution(int n) {
+        int answer = 0;
+        for(int i = 2 ; i <= n ; i++){
+            int count = 0;
+            for(int j = 2 ; j <= n; j++){
+                if (i % j == 0){
+                    count++;
                 }
             }
-
-            return answer;
+            if (count < 2){
+                answer ++;
+            }
         }
+
+        System.out.println(answer);
+        return answer;
+
+    }
 
 
     public static void main(String[] args) {
-        solution(10);
+       // solution(10);
+        solution(5);
 
     }
 }

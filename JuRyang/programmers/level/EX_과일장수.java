@@ -34,28 +34,38 @@ public class EX_과일장수 {
 
     static int solution(int k, int m, int[] score) {
         int answer = 0;
-        int a = score.length / m;
-        int b;
-        int [] nemo = new int[a];
-        System.out.println(score.length);
-        System.out.println(a);
+        Integer [] nemo = new Integer[score.length];
         Arrays.sort(score);
-        ArrayList <Integer> list = new ArrayList<>();
-        for(int i = a-1; i >0; i--){
-            list.add(score[i]);
-            System.out.println(score[i]);
+
+        for(int i = 0; i <score.length; i++){
+            nemo[i] = score[score.length-1-i];
+        }
+        System.out.println(Arrays.toString(nemo)); //정렬했어
+
+        int a = 0;
+        while(true){
+            if(a >= score.length || a + m > score.length){
+                break;
+            }
+            answer += nemo[a+m-1] * m;
+            a += m;
         }
 
-        //자르자 자르자...
-
+//        for(int i = 0; i <score.length; i++){
+//            if((i+1) % m == 0){
+//                answer += score[i] * m;
+//            }
+//        }
+        System.out.println(answer);
         return answer;
     }
 
 
     public static void main(String[] args) {
-        int k = 3;
-        int m = 4;
-        int [] score = {1, 2, 3, 1, 2, 3, 1};
+        int k = 4;
+        int m = 3;
+        //int [] score = {1, 2, 3, 1, 2, 3, 1};
+        int [] score = {4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2};
         solution(k,m,score);
 
     }
